@@ -14,21 +14,22 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity: AppCompatActivity() {
     // no reflection API is used under the hood
    // private val viewBinding by viewBinding(ActivityMainBinding::bind)\
 
     // reflection API and ViewBinding.bind are used under the hood
    // private val viewBinding: ProfileBinding by viewBinding()
 
-    val viewBinding by bingView(ActivityMainBinding::bind)
+    private val viewBinding by bingView(ActivityMainBinding::bind)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding.editName.setText("0000")
 
-        ActivityMainBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_main)
+        viewBinding.editName.setText("0077700")
+
     }
 
 }
